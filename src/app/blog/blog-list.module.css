@@ -1,0 +1,44 @@
+/* File: src/styles/blog/BlogList.module.css */
+.blogList {
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.blogListHeader {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.blogListTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blogListDescription {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .blogListTitle {
+    font-size: 2rem;
+  }
+  
+  .postsGrid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 4rem 1rem;
+  }
+  
+  .blogListHeader {
+    padding: 2rem 1rem;
+  }
+}

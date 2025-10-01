@@ -1,0 +1,76 @@
+.relatedPosts {
+  background: var(--bg-secondary);
+  padding: 4rem 2rem;
+}
+
+.relatedContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.relatedTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.relatedCard {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.relatedCard:hover {
+  transform: translateY(-5px);
+}
+
+.relatedImage {
+  height: 200px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.relatedContent {
+  padding: 1.5rem;
+}
+
+.relatedDate {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.relatedCardTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.relatedExcerpt {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Dark theme adjustments */
+:global([data-theme="dark"]) .relatedCard {
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}

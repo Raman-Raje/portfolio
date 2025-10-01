@@ -1,0 +1,93 @@
+.footer {
+  background: var(--secondary);
+  color: white;
+  padding: 3rem 2rem 2rem 2rem;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footerSection h4 {
+  margin-bottom: 1rem;
+}
+
+.footerTitle {
+  color: white;
+}
+
+.footerDescription {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footerLinks li {
+  margin-bottom: 0.5rem;
+}
+
+.footerLinks a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: white;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.socialIcon {
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+  /* This will help with color transitions on hover */
+  filter: brightness(0) saturate(100%) invert(42%) sepia(11%) saturate(1015%) hue-rotate(183deg) brightness(94%) contrast(87%);
+}
+
+.socialLink:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark theme adjustments */
+:global([data-theme="dark"]) .footer {
+  background: var(--bg-secondary);
+}

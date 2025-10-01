@@ -1,0 +1,155 @@
+.commentsSection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.commentsTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.commentForm {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+
+.formTitle {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formInput,
+.formTextarea {
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.formTextarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.submitBtn {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.commentsList {
+  margin-bottom: 2rem;
+}
+
+.commentItem {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.commentAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+}
+
+.commentName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.commentTime {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.commentMessage {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.loadMore {
+  text-align: center;
+}
+
+.loadMoreBtn {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loadMoreBtn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Dark theme adjustments */
+:global([data-theme="dark"]) .commentItem {
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+:global([data-theme="dark"]) .commentForm {
+  background: var(--bg-secondary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .commentsSection {
+    padding: 3rem 1rem;
+  }
+}

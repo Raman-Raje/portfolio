@@ -1,0 +1,410 @@
+.contact {
+  background: var(--bg-secondary);
+}
+
+.section {
+  padding: 5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contactInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.contactInfo p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.contactItem:hover {
+  transform: translateX(5px);
+}
+
+.contactIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Social Links Styles for Next.js Image Component */
+.socialLinks {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  justify-content: flex-start;
+}
+
+.socialLink {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Important: Style the Image component inside social links */
+.socialIcon {
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+  /* This will help with color transitions on hover */
+  filter: brightness(0) saturate(100%) invert(42%) sepia(11%) saturate(1015%) hue-rotate(183deg) brightness(94%) contrast(87%);
+}
+
+.socialLink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary, #2563eb), #7c3aed);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+}
+
+.socialLink:hover::before {
+  opacity: 1;
+}
+
+.socialLink:hover .socialIcon {
+  /* Make icons white on hover */
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  transform: scale(1.1);
+}
+
+/* Platform-specific styles with brand colors */
+.socialLink.linkedin::before {
+  background: linear-gradient(135deg, #0077b5, #005885);
+}
+
+.socialLink.github::before {
+  background: linear-gradient(135deg, #333, #24292e);
+}
+
+.socialLink.twitter::before {
+  background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+}
+
+.socialLink.medium::before {
+  background: linear-gradient(135deg, #00ab6c, #00975d);
+}
+
+.socialLink.email::before {
+  background: linear-gradient(135deg, #ea4335, #d33b2c);
+}
+
+.socialLink.linkedin:hover {
+  box-shadow: 0 12px 30px rgba(0, 119, 181, 0.3);
+}
+
+.socialLink.github:hover {
+  box-shadow: 0 12px 30px rgba(51, 51, 51, 0.3);
+}
+
+.socialLink.medium:hover {
+  box-shadow: 0 12px 30px rgba(0, 171, 108, 0.3);
+}
+
+.socialLink.twitter:hover {
+  box-shadow: 0 12px 30px rgba(29, 161, 242, 0.3);
+}
+
+.socialLink.email:hover {
+  box-shadow: 0 12px 30px rgba(234, 67, 53, 0.3);
+}
+
+/* Contact Icon Styles */
+.contactIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary, #2563eb);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.contactIconImage {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Alternative: Minimal style for Next.js Image */
+.socialLinks-minimal {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.socialLink-minimal {
+  width: 48px;
+  height: 48px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socialLink-minimal .socialIcon {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(11%) saturate(1015%) hue-rotate(183deg) brightness(94%) contrast(87%);
+  transition: all 0.2s ease;
+}
+
+.socialLink-minimal:hover {
+  background: var(--primary, #2563eb);
+  border-color: var(--primary, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.socialLink-minimal:hover .socialIcon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Alternative: Clean style with brand colors on hover */
+.socialLinks-brand {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.socialLink-brand {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.socialLink-brand .socialIcon {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(11%) saturate(1015%) hue-rotate(183deg) brightness(94%) contrast(87%);
+  transition: all 0.3s ease;
+}
+
+/* Brand-specific hover colors for clean style */
+.socialLink-brand.linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+}
+
+.socialLink-brand.github:hover {
+  background: #333;
+  border-color: #333;
+}
+
+.socialLink-brand.twitter:hover {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.socialLink-brand.email:hover {
+  background: #ea4335;
+  border-color: #ea4335;
+}
+
+.socialLink-brand.medium:hover {
+  background: #00ab6c;
+  border-color: #00ab6c;
+}
+
+.socialLink-brand:hover .socialIcon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  transform: scale(1.1);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .socialLink {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .socialIcon {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(6%) saturate(1969%) hue-rotate(183deg) brightness(101%) contrast(91%);
+  }
+  
+  .socialLink-minimal {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .socialLink-brand {
+    background: #1e293b;
+    border-color: #334155;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .socialLinks {
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .socialLink {
+    width: 48px;
+    height: 48px;
+  }
+}
+.contactForm {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contactForm h3 {
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Dark theme adjustments */
+:global([data-theme="dark"]) .contactItem {
+  background: var(--bg-secondary);
+}
+
+:global([data-theme="dark"]) .contactForm {
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
