@@ -28,7 +28,6 @@ export default async function BlogPost({ params }) {
       <BlogHeader {...data} />
       <BlogContent content={content}/>
       <RelatedPosts currentPostId={data.slug} />
-      <Comments postId={data.slug} />
       <NewsLetter />
       <BlogFooter />
     </ThemeProvider>

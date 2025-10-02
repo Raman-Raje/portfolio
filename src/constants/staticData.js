@@ -153,4 +153,4 @@ export const projectsData = [
       "Successfully onboarded practicing doctors and generated over 1,000 digital prescriptions.",
     ],
   },      
-];  
+];
