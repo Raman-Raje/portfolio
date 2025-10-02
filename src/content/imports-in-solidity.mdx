@@ -1,0 +1,94 @@
+---
+title: "Imports in Solidity"
+category: "Blockchain"
+tags: ["Solidity", "Ethereum", "Brownie", "Remix", "Smart Contracts"]
+date: 2025-02-21
+readTime: "7 min read"
+views: "1,200 views"
+excerpt: "Understanding imports in Solidity: local imports, importing directly from GitHub, and handling dependencies in Brownie."
+icon: "📦"
+slug: "imports-in-solidity"
+tableOfContents:
+  - { id: "intro", title: "Introduction" }
+  - { id: "local-imports", title: "1. Local Imports" }
+  - { id: "github-imports", title: "2. Import Through GitHub (Remix)" }
+  - { id: "brownie-imports", title: "3. Import in Brownie" }
+  - { id: "endnote", title: "EndNote" }
+  - { id: "references", title: "References" }
+---
+
+## Introduction
+
+While completing a FreeCodeCamp course on Solidity, I initially struggled to understand **imports**.  
+After some digging, I realized there are mainly **three ways to import in Solidity**:
+
+- Local imports  
+- Import through GitHub (works only in Remix)  
+- Import in Brownie  
+
+Let’s walk through each.
+
+---
+
+## 1. Local Imports
+
+You can import both **local** and **external files** in Solidity.  
+
+For example,
+
+<ImageBlock src="/blogs/imports-in-solidity/1.png" alt="In Same Folder" height ={150}/>
+<ImageBlock src="/blogs/imports-in-solidity/2.png" alt="In Different Folder" height ={150}/>
+
+
+## 2. Import Through Github (Works only in Remix)
+
+There are many other ways to import other than Github in the remix. But I found this one too easy to follow. 
+You just need to copy the GitHub URL pointing to the contract and paste it after import. Please find below e.g.
+<ImageBlock src="/blogs/imports-in-solidity/3.png" alt="" height ={150}/>
+
+## 3. Import in Brownie
+Brownie is a great package for smart contract development. It is a Python-based development and testing framework for smart contracts targeting the <LinkBlock href="https://docs.soliditylang.org/en/v0.6.0/introduction-to-smart-contracts.html#the-ethereum-virtual-machine">Ethereum Virtual Machine</LinkBlock>.
+
+There are two steps to follow
+
+### Adding Dependancy:-
+To import a smart contract/source from a package, one needs to declare the dependencies by adding a dependencies field to your project configuration file. Brownie will download that dependency in the .brownie\packages folder during compilation.
+
+The format to add dependency is **[ORG]/[REPO]@[VERSION].**
+
+For e.g. let’s import a smart contract from chainlink Github repo. To do so, we need to define dependency in the config file.
+<ImageBlock src="/blogs/imports-in-solidity/4.png" alt="dependancies" height ={150}/>
+
+One thing to remember is that the repo must-have release version and tag associated with it. When you execute the brownie compile, the brownie will download the package in the below location on your windows machine.
+
+### Path Remappings:-
+
+Now we need to do path remappings. Brownie exposes this functionality via the compiler.solc.remappings field in the configuration file. Each value under remappings is a string in the format prefix=path
+
+In simple words, it tells brownie to search for a given prefix at a specific path. For e.g.
+
+<ImageBlock src="/blogs/imports-in-solidity/5.png" alt=""/>
+
+Whenever, there is @chainlink occurs in import, it will tell brownie that is refers to smartcontractkit/chainlink@1.3.0
+
+<CodeBlock language="solidity" code={`
+import '@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol';
+
+import 'smartcontractkit/chainlink@1.3.0/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol';
+`} />
+
+above import’s refer to the same thing.
+
+## References
+
+<LinkBlock href="https://eth-brownie.readthedocs.io/en/stable/config.html">Brownie Configuration Docs</LinkBlock>.
+
+<LinkBlock href="https://solidity-by-example.org/import">Solidity by Example: Import</LinkBlock>.
+
+
+## EndNote
+
+🙏 Thanks for reading!
+
+<Callout type="info"> Please ignore minor mistakes and focus on the learning. If this article appeals to you, feel free to leave feedback, comments, or constructive criticism. </Callout>
+

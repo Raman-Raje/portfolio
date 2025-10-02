@@ -1,6 +1,6 @@
 "use client"
 
-import TableOfContentsAuto from '@/components/blog/TableOfContetsAuto';
+import TableOfContents from '@/components/blog/TableOfContents';
 import ShareSection from '@/components/blog/ShareSection';
 import styles from '@/styles/components/blog/BlogContent.module.css';
 import { MDXRemote } from 'next-mdx-remote';
@@ -12,7 +12,7 @@ const BlogContent = ({ content }) => {
   
   return (
     <main className={styles.blogContent}>
-      <TableOfContentsAuto />
+      <TableOfContents />
       <article className="prose lg:prose-xl">
         <MDXRemote {...content} components={components} />
       </article>      

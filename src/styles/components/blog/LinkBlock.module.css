@@ -1,0 +1,19 @@
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+.externalIcon {
+  font-size: 0.75em;
+  opacity: 0.7;
+}

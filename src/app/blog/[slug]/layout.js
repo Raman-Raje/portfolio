@@ -1,17 +1,17 @@
 import { Inter } from 'next/font/google';
-import { BLOG_POSTS } from '@/constants/blogData';
+import { getBlogPost, getAllPostSlugs } from '@/utils/blogUtils';
 import "@/styles/global.css";
 
 const inter = Inter({ subsets: ['latin'] });
 
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({
-    slug: post.slug,
-  }));
+    return getAllPostSlugs().map((slug) => ({
+        slug: String(slug), // Ensure it's a string
+    }));
 }
 
 export async function generateMetadata({ params }) {
-  const post = BLOG_POSTS.find(p => p.slug === params.slug);
+  const post = await getBlogPost(params.slug);
   
   if (!post) {
     return {

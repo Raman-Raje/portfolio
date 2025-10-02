@@ -1,4 +1,4 @@
-/* File: src/styles/blog/BlogList.module.css */
+/* File: src/styles/blog/BlogsBody.module.css */
 .blogList {
   min-height: 100vh;
   padding-top: 100px;
@@ -7,7 +7,7 @@
 .blogListHeader {
   max-width: 800px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 2rem 2rem;
   text-align: center;
 }
 
@@ -33,12 +33,14 @@
     font-size: 2rem;
   }
   
-  .postsGrid {
-    grid-template-columns: 1fr;
-    padding: 0 1rem 4rem 1rem;
-  }
-  
   .blogListHeader {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
   }
+}
+
+/* Infinite Scroll Specific Styles */
+.postsSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
 }

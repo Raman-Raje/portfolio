@@ -35,7 +35,6 @@ export const getAllPosts = () => {
 
         // Combine the data with the slug
         return {
-            slug,
             ...matterResult.data,
         };
     });

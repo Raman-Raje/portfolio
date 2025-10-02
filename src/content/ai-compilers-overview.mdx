@@ -1,0 +1,261 @@
+---
+title: "Exploring the World of AI Compilers: Powering AI Compute and Inference"
+category: "compilers"
+tags: ["TVM", "Triton","IREEE","onnx"]
+date: 2025-02-20
+readTime: "12 min read"
+views: "3,450 views"
+excerpt: "From NVIDIA TensorRT to OpenAI Triton, discover the AI compilers revolutionizing performance across GPUs, CPUs, and edge devices."
+slug: "ai-compilers-overview"
+tableOfContents:
+  - { id: "intro", title: "Introduction" }
+  - { id: "what-are-ai-compilers", title: "What Are AI Compilers?" }
+  - { id: "why-it-matters", title: "Why It Matters" }
+  - { id: "top-compilers", title: "Top AI Compilers You Should Know" }
+  - { id: "comparison-table", title: "Comparison Table" }
+---
+
+## Introduction
+
+Artificial Intelligence (AI) is transforming industries, from autonomous vehicles to personalized streaming.  
+But behind the scenes, **AI compilers** are the unsung heroes making these models run faster and smarter on diverse hardware.  
+
+Whether you’re deploying a large language model on a GPU or optimizing a neural network for an edge device,  
+AI compilers bridge the gap between high-level models and hardware-specific performance.  
+
+In this blog, we’ll explore the exciting world of AI compilers, from NVIDIA TensorRT to OpenAI Triton. 🚀
+
+---
+
+## What Are AI Compilers?
+
+AI compilers take machine learning models — built in frameworks like **PyTorch, TensorFlow, or JAX** — and transform them into optimised, hardware-specific code.  
+
+They act like **translators**: turning abstract algorithms into instructions your GPU, CPU, or specialised accelerator can execute efficiently.  
+
+They employ techniques such as:
+
+- Quantisation  
+- Kernel fusion  
+- Graph optimisation  
+
+… all to reduce latency and increase throughput for real-time AI applications.
+
+---
+
+## Why It Matters
+
+<Callout type="info">
+  Whether you’re a developer building autonomous systems or a data scientist deploying models on edge devices, **AI compilers are key to unlocking performance**.  
+</Callout>
+
+---
+
+## Top AI Compilers You Should Know
+
+### 1. NVIDIA TensorRT: The GPU Inference Powerhouse
+
+- **Key Features**
+  - Advanced quantization (FP8, INT4, AWQ) for compact, fast models  
+  - Optimized for CUDA-enabled NVIDIA GPUs  
+  - Used by Amazon, Netflix, and Zoox  
+  - Community: 11.7k+ stars on GitHub  
+
+<Callout type="success">
+  **Why It’s Cool:** TensorRT minimizes memory bandwidth — perfect for self-driving cars and medical devices.
+</Callout>
+
+---
+
+### 2. Apache TVM: The Universal Optimizer
+
+- **Key Features**
+  - Optimises computations for CPUs, GPUs, and ML accelerators  
+  - Strong open-source community (12.3k+ stars on GitHub)  
+  - Used by Alibaba, AWS, Intel  
+
+<Callout type="info">
+  **Why It’s Cool:** Hardware-agnostic design makes TVM ideal for cross-platform AI deployment.
+</Callout>
+
+---
+
+### 3. XLA (Accelerated Linear Algebra): Google’s Optimization Engine
+
+- **Key Features**
+  - Optimizes TensorFlow, JAX, and PyTorch models  
+  - Linear algebra optimizations for performance  
+  - Open-source (5.3k+ stars on GitHub)  
+
+<Callout type="info">
+  **Why It’s Cool:** XLA powers Google’s massive AI workloads.
+</Callout>
+
+---
+
+### 4. ONNX Runtime: Microsoft’s Cross-Platform Champion
+
+- **Key Features**
+  - Supports training + inference  
+  - Runs on Windows, Linux, Mac, iOS, Android, Web  
+  - 16.8k+ stars on GitHub  
+
+<Callout type="success">
+  **Why It’s Cool:** Its cross-platform reach makes it perfect for developers everywhere.
+</Callout>
+
+---
+
+### 5. Glow: Meta’s Accelerator-Friendly Compiler
+
+- **Key Features**
+  - Focused on accelerators, CPUs, and GPUs  
+  - Kernel fusion optimizations  
+  - 3.3k+ stars on GitHub  
+
+<Callout type="info">
+  **Why It’s Cool:** Tailored for accelerators, Glow is great for cutting-edge AI hardware.
+</Callout>
+
+---
+
+### 6. nvFuser (PyTorch): NVIDIA’s JIT Compiler
+
+- **Key Features**
+  - Generates fast fusion kernels for NVIDIA GPUs  
+  - Just-in-time compilation  
+  - Open-source  
+
+<Callout type="success">
+  **Why It’s Cool:** Delivers runtime performance boosts for PyTorch users.
+</Callout>
+
+---
+
+### 7. PlaidML: Intel’s Portable Tensor Compiler
+
+- **Key Features**
+  - Supports Keras, ONNX, nGraph  
+  - Targets NVIDIA, AMD, Intel hardware  
+  - 4.6k+ stars  
+
+<Callout type="info">
+  **Why It’s Cool:** Democratizes AI for devices with limited support.
+</Callout>
+
+---
+
+### 8. OpenVINO: Intel’s Edge AI Toolkit
+
+- **Key Features**
+  - Optimized for Intel hardware  
+  - Supports generative + conventional AI models  
+  - 8.4k+ stars  
+
+<Callout type="success">
+  **Why It’s Cool:** Powers smart cameras and IoT devices.
+</Callout>
+
+---
+
+### 9. IREE: Scaling from Data Centers to Edge
+
+- **Key Features**
+  - MLIR-based, supports PyTorch, ONNX, JAX, TF  
+  - Scales from GPU → Edge accelerators  
+  - 3.2k+ stars  
+
+<Callout type="info">
+  **Why It’s Cool:** Unified approach simplifies multi-device deployment.
+</Callout>
+
+---
+
+### 10. MLC-LLM: Optimizing Large Language Models
+
+- **Key Features**
+  - Native deployment across GPUs, CPUs, accelerators  
+  - Open-source  
+  - Exposes OpenAI-compatible APIs  
+
+<Callout type="success">
+  **Why It’s Cool:** Brings LLM inference to any hardware platform.
+</Callout>
+
+---
+
+### 11. Triton: OpenAI’s GPU Programming Simplified
+
+- **Key Features**
+  - Python-like language for GPU kernels  
+  - LLVM-powered backend  
+  - Open-source  
+
+<Callout type="info">
+  **Why It’s Cool:** Lets non-CUDA experts write high-performance GPU code.
+</Callout>
+
+---
+
+### 12. SHARK-Studio: IREE’s Community Experiment
+
+- **Key Features**
+  - Experimental MLIR project  
+  - Open-source, but not actively maintained  
+
+<Callout type="warning">
+  **Why It’s Cool:** A glimpse into experimental compiler ideas.
+</Callout>
+
+---
+
+### 13. Hidet: Python-Powered Inference
+
+- **Key Features**
+  - PyTorch + ONNX support  
+  - CUDA 11.6+, Linux only  
+  - 700+ stars  
+
+<Callout type="info">
+  **Why It’s Cool:** A Python-first compiler for NVIDIA GPUs.
+</Callout>
+
+---
+
+### 14. PolyBlocks: The A100 Speedster
+
+- **Key Features**
+  - MLIR-based, targeting NVIDIA GPUs  
+  - Reportedly faster than CuBLAS/TensorRT  
+
+<Callout type="warning">
+  **Why It’s Cool:** Promises huge performance, but closed-source.
+</Callout>
+
+---
+
+### 15. Mojo: Pythonic Power Without CUDA
+
+- **Key Features**
+  - Targets CPUs + GPUs without CUDA dependency  
+  - Backed by Modular (MAX)  
+  - Closed-source  
+
+<Callout type="success">
+  **Why It’s Cool:** Pythonic simplicity with blazing speed.
+</Callout>
+
+---
+
+## Comparison Table
+
+<ImageBlock src="/blogs/ai-compilers-overview.png" alt="TVM Logo" />
+
+---
+
+## Wrapping Up
+
+<Callout type="info">
+  AI compilers are the **invisible engines** powering today’s AI revolution — from LLMs in the cloud to edge inference on IoT devices.  
+  Choosing the right one depends on your hardware, framework, and performance needs.  
+</Callout>
