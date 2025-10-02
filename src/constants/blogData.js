@@ -3,8 +3,7 @@
   export const tags = [
     'Machine Learning', 'Deep Learning', 'GenAI', 'LLMs',
     'Computer Vision', 'NLP', 'PyTorch', 'TensorFlow',
-    'Transformers', 'Neural Networks', 'AI Ethics', 'MLOps',
-    'Reinforcement Learning', 'Diffusion Models'
+    'Transformers', 'Neural Networks'
   ];
 
   export const categories = [
