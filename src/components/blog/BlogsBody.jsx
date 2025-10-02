@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { allBlogPosts  } from '@/constants/blogData';
+// import { allBlogPosts  } from '@/constants/blogData';
 import styles from '@/styles/components/blog/BlogsBody.module.css';
 import BlogCardList from './BlogCardList';
 import BlogFilterSection from './BlogFilterSection';
 import useInfiniteScroll from '@/hooks/useInfiniteScroll';
 
-const BlogsBodyInfiniteScroll = () => {
+const BlogsBody = ( { allPosts } ) => {
+  console.log(allPosts);
   const [selectedTags, setSelectedTags] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -15,7 +16,7 @@ const BlogsBodyInfiniteScroll = () => {
     postsPerPage: 6,
     selectedTags,
     selectedCategory,
-    allPosts: allBlogPosts,
+    allPosts,
   });
 
   return (
@@ -46,4 +47,4 @@ const BlogsBodyInfiniteScroll = () => {
   );
 }  
 
-export default BlogsBodyInfiniteScroll
+export default BlogsBody

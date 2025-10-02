@@ -1,4 +1,5 @@
-
+import Link from 'next/link';
+import { formatDateForSEO } from '@/utils/dateUtils';
 import styles from '@/styles/components/blog/BlogCard.module.css';
 
 const BlogCard = ({ post }) => {
@@ -6,7 +7,7 @@ const BlogCard = ({ post }) => {
   return (
     <article className={styles.postCard}>
       <div className={styles.postHeader}>
-        <span className={styles.postDate}>{post.date}</span>
+        <span className={styles.postDate}>{formatDateForSEO(post.date)}</span>
         <span className={styles.postReadTime}>{post.readTime}</span>
       </div>
 
@@ -20,8 +21,10 @@ const BlogCard = ({ post }) => {
           </span>
         ))}
       </div>
-
-      <button className={styles.readMoreBtn}>Read More →</button>
+      <Link href={`/blog/${post.slug}`} className={styles.readMoreBtn}>
+        Read More →
+      </Link>
+      {/* <button className={styles.readMoreBtn}>Read More →</button> */}
     </article>
   );
 }

@@ -1,13 +1,13 @@
 import { Inter } from 'next/font/google';
-import { getBlogPost } from '@/utils/blogUtils';
+import { getBlogPost, getAllPostSlugs } from '@/utils/blogUtils';
 import "@/styles/global.css";
 
 const inter = Inter({ subsets: ['latin'] });
 
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({
-    slug: post.slug,
-  }));
+    return getAllPostSlugs().map((slug) => ({
+        slug: String(slug), // Ensure it's a string
+    }));
 }
 
 export async function generateMetadata({ params }) {

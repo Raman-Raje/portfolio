@@ -40,7 +40,7 @@ const BlogCardList = ({ posts, isLoading, hasMore, loadMore }) => {
 
       <div className={styles.postsGrid}>
         {posts.map(post => (
-          <BlogCard key={post.id} post={post} />
+          <BlogCard key={post.slug} post={post} />
         ))}
       </div>
 
