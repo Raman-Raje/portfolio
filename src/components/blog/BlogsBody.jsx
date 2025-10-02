@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { allBlogPosts  } from '@/constants/blogData';
-import styles from '@/styles/components/blog/BlogsBodyInfiniteScroll.module.css';
+import styles from '@/styles/components/blog/BlogsBody.module.css';
 import BlogCardList from './BlogCardList';
 import BlogFilterSection from './BlogFilterSection';
 import useInfiniteScroll from '@/hooks/useInfiniteScroll';
