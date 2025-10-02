@@ -21,7 +21,6 @@ export const ThemeProvider = ({ children }) => {
   // Function to toggle between 'light' and 'dark'
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    console.log(newTheme);
     setTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);

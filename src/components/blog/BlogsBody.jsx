@@ -8,7 +8,6 @@ import BlogFilterSection from './BlogFilterSection';
 import useInfiniteScroll from '@/hooks/useInfiniteScroll';
 
 const BlogsBody = ( { allPosts } ) => {
-  console.log(allPosts);
   const [selectedTags, setSelectedTags] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
 

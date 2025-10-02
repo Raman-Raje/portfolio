@@ -8,8 +8,6 @@ import styles from '@/styles/components/blog/BlogNavigation.module.css';
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
-  console.log(theme);
-
   return (
     <div className={styles.themeToggle} onClick={toggleTheme}>
       <div className={`${styles.themeToggleSlider} ${theme === 'dark' ? styles.dark : ''}`}>
