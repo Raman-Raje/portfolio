@@ -1,0 +1,136 @@
+.back {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.back:hover { color: var(--accent); }
+
+.content {
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: var(--text);
+}
+
+.content :global(h1) {
+  font-family: var(--heading-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.content :global(h2) {
+  font-family: var(--heading-family);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 40px 0 12px;
+  letter-spacing: -0.005em;
+}
+.content :global(h3) {
+  font-family: var(--heading-family);
+  font-weight: 500;
+  font-size: 16.5px;
+  margin: 28px 0 10px;
+}
+.content :global(p) {
+  margin: 0 0 16px;
+  color: var(--text-dim);
+}
+.content :global(p > em:first-child) {
+  color: var(--text-mute);
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.content :global(strong) {
+  color: var(--text);
+  font-weight: 500;
+}
+.content :global(em) { font-style: italic; }
+
+.content :global(ul),
+.content :global(ol) {
+  padding-left: 22px;
+  color: var(--text-dim);
+  margin: 0 0 18px;
+}
+.content :global(li) { margin-bottom: 6px; }
+
+.content :global(blockquote) {
+  margin: 18px 0;
+  padding: 4px 0 4px 18px;
+  border-left: 2px solid var(--accent);
+  color: var(--text);
+  font-family: var(--heading-family);
+  font-style: italic;
+  font-size: 17px;
+}
+.content :global(blockquote p) {
+  color: var(--text);
+  margin: 0;
+}
+
+.content :global(code) {
+  font-family: var(--mono);
+  font-size: 13px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: var(--accent);
+}
+
+.content :global(pre) {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  margin: 18px 0;
+}
+.content :global(pre code) {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--text-dim);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.content :global(hr) {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.content :global(a) {
+  color: var(--accent);
+  border-bottom-color: var(--accent-soft);
+}
+
+.content :global(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin: 18px 0;
+  display: block;
+}
+.content :global(figure) {
+  margin: 24px 0;
+}
+.content :global(figcaption) {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: center;
+  margin-top: 8px;
+}

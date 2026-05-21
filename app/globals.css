@@ -1,0 +1,121 @@
+/* =============================================================
+   globals.css
+   Design tokens (CSS variables) + base typography + reset.
+   Component-specific layout lives in <Component>.module.css.
+   ============================================================= */
+
+:root {
+  /* Color tokens — written at runtime by lib/theme.ts. These defaults
+     are a sensible dark-warm so SSR HTML isn't blank. */
+  --bg:         #14120f;
+  --bg-2:       #1c1a17;
+  --border:     #2a2723;
+  --border-2:   #353128;
+  --text:       #ece7df;
+  --text-dim:   #a8a298;
+  --text-mute:  #6e6a62;
+  --accent:     #e2a14d;
+  --accent-soft: rgba(226, 161, 77, 0.12);
+
+  /* Type */
+  --serif: 'Newsreader', Georgia, serif;
+  --sans:  'Geist', ui-sans-serif, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, monospace;
+  --heading-family: var(--sans);
+
+  /* Layout */
+  --col-w: 680px;
+  --pad-y: 96px;
+  --gap:   64px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-2);
+  transition: border-color 0.15s, color 0.15s;
+}
+a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+/* Reset for card/row links that shouldn't inherit underline */
+a[class] {
+  border-bottom: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Shared utility classes used by multiple components */
+.page {
+  max-width: var(--col-w);
+  margin: 0 auto;
+  padding: var(--pad-y) 32px 128px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-mute);
+  text-transform: lowercase;
+  display: inline-block;
+}
+
+.block { margin-top: var(--gap); }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.section-head h2 {
+  font-family: var(--heading-family);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.section-head .kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-mute);
+}
+
+@media (max-width: 640px) {
+  :root { --pad-y: 56px; }
+  .page { padding: var(--pad-y) 22px 80px; }
+}

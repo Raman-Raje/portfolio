@@ -1,0 +1,171 @@
+/* Dropdown panel — anchored top-right from the gear icon in TopNav */
+
+.panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 200;
+  width: 260px;
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+  border-radius: 10px;
+  padding: 14px 16px 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  animation: tweaksIn 0.15s ease-out;
+}
+
+@keyframes tweaksIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.close {
+  background: transparent;
+  border: none;
+  color: var(--text-mute);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.close:hover { color: var(--accent); }
+
+.section { margin-bottom: 14px; }
+.section:last-child { margin-bottom: 0; }
+
+.sectionLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-mute);
+  margin-bottom: 6px;
+}
+
+/* Radio */
+.radio {
+  display: flex;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px;
+  background: var(--bg);
+}
+.radioBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 11px;
+  padding: 5px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.radioBtn:hover { color: var(--text); }
+.radioActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Swatches */
+.swatches {
+  display: flex;
+  gap: 6px;
+}
+.swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.1s;
+}
+.swatch:hover { transform: scale(1.1); }
+.swatchActive {
+  border-color: var(--text);
+  box-shadow: 0 0 0 2px var(--bg-2), 0 0 0 3px currentColor;
+}
+
+/* Toggle */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 12px;
+}
+.toggleTrack {
+  width: 30px;
+  height: 17px;
+  background: var(--border);
+  border-radius: 9px;
+  position: relative;
+  transition: background 0.15s;
+  display: inline-block;
+}
+.toggleOn { background: var(--accent); }
+.toggleKnob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+  background: var(--bg-2);
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+.toggleOn .toggleKnob { transform: translateX(13px); }
+.toggleLabel { color: var(--text-dim); }
+
+/* Mobile — full width at bottom of viewport */
+@media (max-width: 640px) {
+  .panel {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 14px 14px 0 0;
+    animation: tweaksMobileIn 0.2s ease-out;
+  }
+  @keyframes tweaksMobileIn {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

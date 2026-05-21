@@ -1,0 +1,112 @@
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: var(--col-w);
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--bg);
+  /* subtle bottom edge on scroll */
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+/* show border when page is scrolled — set via JS or just always subtle */
+.topnav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: var(--border);
+  opacity: 0.5;
+}
+
+.brand {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  border: none;
+  white-space: nowrap;
+}
+.brand:hover { color: var(--accent); }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLink {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.navLink:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: var(--text-dim);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  padding: 0;
+}
+.iconBtn:hover,
+.iconBtnActive {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.iconBtn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tweaksWrap {
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .topnav {
+    padding: 12px 22px;
+  }
+  .topnav::after {
+    left: 22px;
+    right: 22px;
+  }
+  .brand {
+    font-size: 12px;
+  }
+  .navLink {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  .iconBtn {
+    width: 30px;
+    height: 30px;
+  }
+}

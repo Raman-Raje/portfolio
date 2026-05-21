@@ -1,0 +1,104 @@
+.hero { margin-bottom: var(--gap); }
+
+.top {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+  display: grid;
+  place-items: center;
+  color: var(--text-mute);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-family: var(--heading-family);
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px;
+  line-height: 1.1;
+}
+
+.role {
+  color: var(--text-dim);
+  font-size: 15px;
+}
+
+.pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 2px 7px;
+  border: 1px solid var(--border-2);
+  border-radius: 4px;
+  color: var(--accent);
+  margin-left: 6px;
+  vertical-align: 1px;
+}
+
+.bio {
+  color: var(--text-dim);
+  font-size: 16px;
+  margin: 0 0 22px;
+  max-width: 60ch;
+}
+.bio strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.social a {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-dim);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.social a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.social a svg {
+  width: 16px;
+  height: 16px;
+}
+.social .email {
+  width: auto;
+  padding: 0 12px;
+  height: 34px;
+  font-family: var(--mono);
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+@media (max-width: 640px) {
+  .name { font-size: 26px; }
+  .top { gap: 18px; }
+  .avatar { width: 64px; height: 64px; }
+}

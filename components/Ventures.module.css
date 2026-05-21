@@ -1,0 +1,141 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s, background 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.card:hover {
+  border-color: var(--accent);
+  background: var(--bg-2);
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  display: grid;
+  place-items: center;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+.card:hover .title {
+  color: var(--accent);
+}
+
+.status {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.statusActive {
+  color: #7dcfa3;
+  border: 1px solid rgba(125, 207, 163, 0.3);
+  background: rgba(125, 207, 163, 0.08);
+}
+
+.statusShutdown {
+  color: var(--text-mute);
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.statusExited {
+  color: #7aa2f7;
+  border: 1px solid rgba(122, 162, 247, 0.3);
+  background: rgba(122, 162, 247, 0.08);
+}
+
+.timeline {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  margin-left: auto;
+}
+
+.summary {
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.highlights li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+.highlights li:last-child {
+  margin-bottom: 0;
+}
+.highlights li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+  }
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .timeline {
+    margin-left: 0;
+  }
+}

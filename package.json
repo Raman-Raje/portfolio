@@ -1,0 +1,33 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The same portfolio site as the static `index.html`, ported to **Next.js 14 (App Router) + TypeScript**. Blog posts are rendered statically at build time from `content/blog/*.md`. Themed via CSS variables &mdash; two axes (`mode` × `tone`) plus accent / density / serif-headings.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "next.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "marked": "12.0.0",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "sanitize-html": "^2.17.4"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "@types/sanitize-html": "^2.16.1",
+    "typescript": "5.4.5"
+  }
+}
