@@ -80,7 +80,3 @@ The above imports refer to the same thing.
 - [Solidity by Example: Import](https://solidity-by-example.org/import)
 
 ---
-
-## EndNote
-
-Thanks for reading! Please ignore minor mistakes and focus on the learning. If this article appeals to you, feel free to leave feedback, comments, or constructive criticism.
